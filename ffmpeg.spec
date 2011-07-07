@@ -8,11 +8,7 @@ Summary:        Digital VCR and streaming server
 Name:           ffmpeg
 Version:        0.7
 Release:        0.3.%{?date}%{?date:git}%{?rel}%{?dist}
-%if 0%{?_with_amr:1}
-License:        GPLv3+
-%else
 License:        GPLv2+
-%endif
 Group:          Applications/Multimedia
 URL:            http://ffmpeg.org/
 %if 0%{?date}
@@ -38,7 +34,7 @@ BuildRequires:  libvpx-devel >= 0.9.1
 %ifarch %{ix86} x86_64
 BuildRequires:  libXvMC-devel
 %endif
-%{?_with_amr:BuildRequires: opencore-amr-devel}
+BuildRequires:  opencore-amr-devel
 BuildRequires:  openjpeg-devel
 BuildRequires:  schroedinger-devel
 BuildRequires:  SDL-devel
@@ -92,7 +88,7 @@ This package contains development files for %{name}
     --mandir=%{_mandir} \\\
     --arch=%{_target_cpu} \\\
     --extra-cflags="$RPM_OPT_FLAGS" \\\
-    %{?_with_amr:--enable-libopencore-amrnb --enable-libopencore-amrwb --enable-version3} \\\
+    --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-version3 \\\
     --enable-bzlib \\\
     --enable-libdc1394 \\\
     --enable-libdirac \\\
