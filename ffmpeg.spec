@@ -7,7 +7,7 @@
 Summary:        Digital VCR and streaming server
 Name:           ffmpeg
 Version:        0.7
-Release:        0.3.%{?date}%{?date:git}%{?rel}%{?dist}
+Release:        0.4.%{?date}%{?date:git}%{?rel}%{?dist}.R
 License:        GPLv2+
 Group:          Applications/Multimedia
 URL:            http://ffmpeg.org/
@@ -237,6 +237,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Jul 07 2011 Vasiliy Glazov <vascom2@gmail.com> - 0.7-0.4.20110612git
+- Add AMR
+
 * Fri Jul 01 2011 Nicolas Chauvet <kwizart@gmail.com> - 0.7-0.3.20110612git
 - Add XvMC in ffmpeg
 
